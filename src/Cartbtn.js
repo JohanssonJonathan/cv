@@ -1,111 +1,120 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from "react";
 import "./css/App.css";
-import './css/cartbtn.css';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import "./css/cartbtn.css";
+import { CSSTransition } from "react-transition-group";
 
+class Wrapper extends Component {
+  render() {
+    const { children, ruta, onEntered } = this.props;
+    return (
+      <Fragment>
+        <CSSTransition
+          in={ruta}
+          timeout={200}
+          classNames="ruta"
+          onEntered={onEntered}
+        >
+          <div className="ruta" />
+        </CSSTransition>
 
-class Cartbtn extends Component {
-
-  constructor(){
-    super();
-    this.state={
-      line:false,
-      ruta:false,
-      rutaUnder:false,
-    }
+        {children}
+        <CSSTransition in={ruta} timeout={200} classNames="rutaUnder">
+          <div className="rutaUnder" />
+        </CSSTransition>
+      </Fragment>
+    );
   }
-
-
-  leaveCartBtnComponent = ()=>{
-
-    this.setState({
-      line:false,
-      ruta:false,
-      rutaUnder:false,
-    })
-
-    function isEmpty(obj) {
-      for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-          return true;
-        }
-          return false;
-    }
-
-    if(isEmpty(this.props)) {
-      this.props.cartBtnClicked()
-    }
 }
 
-
-
-render() {
-
-
+const ImageButton = ({ showBtn, onEntered, leaveCartBtnComponent }) => {
   return (
-
-  <React.Fragment>
-
     <CSSTransition
-      in={this.state.ruta}
-      timeout={200}
-      classNames="ruta"
-      onEntered={() => {
-        this.setState({
-          rutaUnder:true
-        })
-      }}
+      in={showBtn}
+      appear={true}
+      timeout={900}
+      classNames="fade"
+      onEntered={onEntered}
     >
-      <div className="ruta">
-
+      <div className="cartbtn" onClick={leaveCartBtnComponent}>
+        <img src="./surf.svg" />
+        <span>View cart</span>
       </div>
     </CSSTransition>
-    <div className="startBtn">
+  );
+};
 
-      <CSSTransition
-        in={this.props.showBtn}
-        appear={true}
-        timeout={900}
-        classNames="fade"
-        onEntered={() => {
-          this.setState({
-            line:true
-          })
-        }}
-      >
-        <div  className="cartbtn" onClick={this.leaveCartBtnComponent}>
-          <img src="./surf.svg"/>
-          <span >
-            View cart
-          </span>
-        </div>
-      </CSSTransition>
-
-      <CSSTransition
-        in={this.state.line}
-        timeout={400}
-        classNames="line"
-        onEntered={() => {
-          this.setState({
-            ruta:true
-          })
-        }}
-      >
-        <div id="line">
-        </div>
-      </CSSTransition>
-
-    </div>
+const Underline = ({textLine,onEntered}) => {
+  return (
     <CSSTransition
-      in={this.state.ruta}
-      timeout={200}
-      classNames="rutaUnder"
+      in={textLine}
+      timeout={400}
+      classNames="line"
+      onEntered={onEntered}
     >
-      <div className="rutaUnder">
-
-      </div>
+      <div id="line" />
     </CSSTransition>
-  </React.Fragment>
+  );
+};
+
+class Cartbtn extends Component {
+  state = {
+    textLine: false,
+    ruta: false,
+    rutaUnder: false
+  };
+
+  leaveCartBtnComponent = () => {
+    this.setState({
+      textLine: false,
+      ruta: false,
+      rutaUnder: false
+    });
+
+    function isEmpty(obj) {
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) return true;
+      }
+      return false;
+    }
+
+    if (isEmpty(this.props)) {
+      this.props.cartBtnClicked();
+    }
+  };
+
+  render() {
+    const { ruta, textLine } = this.state;
+    const { showBtn } = this.props;
+    return (
+      <Wrapper
+        ruta={ruta}
+        onEntered={() => {
+          this.setState({
+            rutaUnder: true
+          });
+        }}
+      >
+        <div className="startBtn">
+          <ImageButton
+            showBtn={showBtn}
+            onEntered={() => {
+              this.setState({
+                textLine: true
+              });
+            }}
+            leaveCartBtnComponent={this.leaveCartBtnComponent}
+          />
+
+          <Underline
+            textLine={textLine}
+            onEntered={() => {
+              this.setState({
+                ruta: true
+              });
+            }}
+          />
+        </div>
+      </Wrapper>
     );
   }
 }

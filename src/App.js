@@ -3,7 +3,6 @@ import Cartbtn from "./Cartbtn.js";
 import Cart from "./Cart.js"
 import './css/App.css';
 
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class App extends Component {
 

@@ -1,9 +1,4 @@
-/* .startBtn{
-  position: relative;
-  margin: auto;
-  top:250px;
-  width: 50%;
-} */
+
 
 .rutaUnder{
   width: 100%;
@@ -49,10 +44,8 @@
   height: 0px;
   background: rgba(0,0,0,0.9);
   position: absolute;
+  background:"red"
 }
-
-
-
 
 
 .ruta-enter-active {
@@ -86,9 +79,6 @@
   top:230px;
 }
 
-
-
-
 .cartbtn {
   text-align: center;
   position:relative;
@@ -102,14 +92,6 @@
   color:rgba(0,0,0,0.7);
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-}
-
-.cartbtn img {
-}
-
-.fade-appear{
-
-
 }
 
 .fade-appear-active {
@@ -154,23 +136,6 @@
   opacity: 0;
 }
 
-/* Cart button */
-
-
-
-/* #viewCart {
-  position:relative;
-  display: block;
-  font-size: 1.2em;
-  opacity: 0;
-  margin: auto;
-  font-family: 'Montserrat', sans-serif;
-  background: white;
-  border:none;
-  transition: opacity 0.8s ease-out, top 0.6s ease-out, transform 0.1s ease-out;
-  cursor:pointer;
-
-} */
 
 #viewCart:hover{
   transform: scale(0.9)
@@ -204,11 +169,4 @@
   background: rgba(255,255,255,0.7);
 }
 
-/*
-#line{
-  margin: auto;
-  width:0px;
-  height: 2px;
-  background: black;
-  transition: width 0.4s ease-out 0.6s;
-} */
+
