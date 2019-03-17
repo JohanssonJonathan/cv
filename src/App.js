@@ -1,49 +1,25 @@
-import React, { Component } from 'react';
-import Cartbtn from "./Cartbtn.js";
-import Cart from "./Cart.js"
-import './css/App.css';
-
+import React, { Component } from "react";
+import Enter from "./Enter.js";
+import Cv from "./Cv.js";
+import "./css/App.css";
 
 class App extends Component {
+  state = {
+    showCv: false
+  };
 
-  constructor(){
-    super();
-
-    this.state={
-      showCart: false,
-      cartbtn:true,
-    }
-    this.cartBtnClicked = this.cartBtnClicked.bind(this);
-}
-
-
-cartBtnClicked = (checkout)=>{
-
-  if(checkout){
+  toggleCvModal = checkout => {
     this.setState({
-      showCart:false,
-      cartbtn:true
-    })
-  }else{
-    this.setState({
-      showCart:true,
-      cartbtn:false
-    })
-  }
-}
+      showCv: checkout ? false : true
+    });
+  };
 
-
-
-
-
-render() {
-
+  render() {
+    const { showCv } = this.state;
     return (
       <div className="App">
-
-        <Cartbtn showBtn={this.state.cartbtn} cartBtnClicked={this.cartBtnClicked}/>
-        <Cart cartBtnClicked={this.cartBtnClicked} showCart={this.state.showCart}/>
-
+        <Enter showCv={showCv} toggleCvModal={this.toggleCvModal} />
+        <Cv toggleCvModal={this.toggleCvModal} showCv={showCv} />
       </div>
     );
   }

@@ -1,12 +1,10 @@
 {
-  "name": "codechallange",
+  "name": "cv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://johanssonjonathan.github.io/codechallenge",
   "dependencies": {
     "gh-pages": "^2.0.0",
     "react": "^16.5.2",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5",
     "react-transition-group": "^2.4.0"

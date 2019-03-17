@@ -6,10 +6,10 @@ import './css/bottom.css';
 const Bottom =(props)=> {
     return(
       <div className="bottom">
-        <div onClick={props.resetValues}>
+        <div onClick={props.toggleCvModal}>
             <span>Continue shopping</span>
           </div>
-        <div onClick={props.resetValues}>
+        <div onClick={props.toggleCvModal}>
           <img src="./surf.svg"/>
           <span>Checkout</span>
         </div>

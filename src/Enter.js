@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./css/App.css";
-import "./css/cartbtn.css";
+import "./css/enterBtn.css";
 import { CSSTransition } from "react-transition-group";
 
 class Wrapper extends Component {
@@ -26,16 +26,16 @@ class Wrapper extends Component {
   }
 }
 
-const ImageButton = ({ showBtn, onEntered, leaveCartBtnComponent }) => {
+const ImageButton = ({ showCv, onEntered, leaveFirstScreen }) => {
   return (
     <CSSTransition
-      in={showBtn}
+      in={showCv=== false && true}
       appear={true}
       timeout={900}
       classNames="fade"
       onEntered={onEntered}
     >
-      <div className="cartbtn" onClick={leaveCartBtnComponent}>
+      <div className="cartbtn" onClick={leaveFirstScreen}>
         <img src="./surf.svg" />
         <span>View cart</span>
       </div>
@@ -43,7 +43,7 @@ const ImageButton = ({ showBtn, onEntered, leaveCartBtnComponent }) => {
   );
 };
 
-const Underline = ({textLine,onEntered}) => {
+const Underline = ({ textLine, onEntered }) => {
   return (
     <CSSTransition
       in={textLine}
@@ -56,35 +56,26 @@ const Underline = ({textLine,onEntered}) => {
   );
 };
 
-class Cartbtn extends Component {
+class Enter extends Component {
   state = {
     textLine: false,
     ruta: false,
     rutaUnder: false
   };
 
-  leaveCartBtnComponent = () => {
+  leaveFirstScreen = () => {
     this.setState({
       textLine: false,
       ruta: false,
       rutaUnder: false
     });
 
-    function isEmpty(obj) {
-      for (var key in obj) {
-        if (obj.hasOwnProperty(key)) return true;
-      }
-      return false;
-    }
-
-    if (isEmpty(this.props)) {
-      this.props.cartBtnClicked();
-    }
+    this.props.toggleCvModal();
   };
 
   render() {
     const { ruta, textLine } = this.state;
-    const { showBtn } = this.props;
+    const { showCv } = this.props;
     return (
       <Wrapper
         ruta={ruta}
@@ -96,13 +87,13 @@ class Cartbtn extends Component {
       >
         <div className="startBtn">
           <ImageButton
-            showBtn={showBtn}
+            showCv={showCv}
             onEntered={() => {
               this.setState({
                 textLine: true
               });
             }}
-            leaveCartBtnComponent={this.leaveCartBtnComponent}
+            leaveFirstScreen={this.leaveFirstScreen}
           />
 
           <Underline
@@ -119,4 +110,4 @@ class Cartbtn extends Component {
   }
 }
 
-export default Cartbtn;
+export default Enter;

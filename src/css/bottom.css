@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
 
 }
 
@@ -21,7 +21,7 @@
   background: rgba(255,255,255,0.4);
   width:200px;
   z-index: 2;
-  transform: skew(-20deg)
+  /* transform: skew(-20deg) */
 }
 
 .bottom div:first-child span {
