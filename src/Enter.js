@@ -1,26 +1,28 @@
 import React, { Component, Fragment } from "react";
 import "./css/App.css";
 import "./css/enterBtn.css";
+import Transition from "./UI/Transition"
 import { CSSTransition } from "react-transition-group";
+
 
 class Wrapper extends Component {
   render() {
     const { children, ruta, onEntered } = this.props;
     return (
       <Fragment>
-        <CSSTransition
-          in={ruta}
+        <Transition
+          start={ruta}
           timeout={200}
           classNames="ruta"
           onEntered={onEntered}
         >
           <div className="ruta" />
-        </CSSTransition>
+        </Transition>
 
         {children}
-        <CSSTransition in={ruta} timeout={200} classNames="rutaUnder">
+        <Transition start={ruta} timeout={200} classNames="rutaUnder">
           <div className="rutaUnder" />
-        </CSSTransition>
+        </Transition>
       </Fragment>
     );
   }
@@ -28,8 +30,8 @@ class Wrapper extends Component {
 
 const ImageButton = ({ showCv, onEntered, leaveFirstScreen }) => {
   return (
-    <CSSTransition
-      in={showCv=== false && true}
+    <Transition
+      start={showCv === false && true}
       appear={true}
       timeout={900}
       classNames="fade"
@@ -39,20 +41,20 @@ const ImageButton = ({ showCv, onEntered, leaveFirstScreen }) => {
         <img src="./surf.svg" />
         <span>View cart</span>
       </div>
-    </CSSTransition>
+    </Transition>
   );
 };
 
 const Underline = ({ textLine, onEntered }) => {
   return (
-    <CSSTransition
-      in={textLine}
+    <Transition
+      start={textLine}
       timeout={400}
       classNames="line"
       onEntered={onEntered}
     >
       <div id="line" />
-    </CSSTransition>
+    </Transition>
   );
 };
 
