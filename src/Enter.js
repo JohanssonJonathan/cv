@@ -8,13 +8,11 @@ import { CSSTransition } from "react-transition-group";
 class Wrapper extends Component {
   render() {
     const { children, ruta, onEntered } = this.props;
+    const transitionProps = {start:ruta, timeout:200, classNames:"ruta", onEntered:onEntered}
     return (
       <Fragment>
         <Transition
-          start={ruta}
-          timeout={200}
-          classNames="ruta"
-          onEntered={onEntered}
+         {...transitionProps}
         >
           <div className="ruta" />
         </Transition>
@@ -29,13 +27,10 @@ class Wrapper extends Component {
 }
 
 const ImageButton = ({ showCv, onEntered, leaveFirstScreen }) => {
+  const transitionProps = {start:showCv === false && true, appear:true, timeout:900, classNames:"fade", onEntered:onEntered}
   return (
     <Transition
-      start={showCv === false && true}
-      appear={true}
-      timeout={900}
-      classNames="fade"
-      onEntered={onEntered}
+     {...transitionProps}
     >
       <div className="cartbtn" onClick={leaveFirstScreen}>
         <img src="./surf.svg" />
@@ -46,12 +41,10 @@ const ImageButton = ({ showCv, onEntered, leaveFirstScreen }) => {
 };
 
 const Underline = ({ textLine, onEntered }) => {
+  const transitionProps = {start:textLine, timeout:400, classNames:"line", onEntered:onEntered}
   return (
     <Transition
-      start={textLine}
-      timeout={400}
-      classNames="line"
-      onEntered={onEntered}
+     {...transitionProps}
     >
       <div id="line" />
     </Transition>
@@ -78,33 +71,34 @@ class Enter extends Component {
   render() {
     const { ruta, textLine } = this.state;
     const { showCv } = this.props;
+
+    const wrapperProps = {ruta:ruta, onEntered:() => {
+      this.setState({
+        rutaUnder: true
+      });
+    }}
+    const imageButtonProps = {showCv:showCv, leaveFirstScreen:this.leaveFirstScreen, onEntered:()=>{
+      this.setState({
+        textLine: true
+      });
+    }}
+
+    const underLineProps = {textLine:textLine, onEntered:() => {
+      this.setState({
+        ruta: true
+      });
+    }}
     return (
       <Wrapper
-        ruta={ruta}
-        onEntered={() => {
-          this.setState({
-            rutaUnder: true
-          });
-        }}
+        {...wrapperProps}
       >
         <div className="startBtn">
           <ImageButton
-            showCv={showCv}
-            onEntered={() => {
-              this.setState({
-                textLine: true
-              });
-            }}
-            leaveFirstScreen={this.leaveFirstScreen}
+            {...imageButtonProps}
           />
 
           <Underline
-            textLine={textLine}
-            onEntered={() => {
-              this.setState({
-                ruta: true
-              });
-            }}
+            {...underLineProps}
           />
         </div>
       </Wrapper>

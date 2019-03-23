@@ -12,7 +12,6 @@
 /*****************/
 .imageWrapper {
   width: 100%;
-  height: 1000px;
   position: relative;
   z-index: 2;
 }
@@ -25,7 +24,7 @@
 }
 
 .profileFixed {
-  position: fixed;
+  position: absolute;
   transform: translateX(-50%);
   left: 50%;
 }
@@ -34,76 +33,26 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-
-  /* box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.6); */
 }
 
-.animateProfile-enter {
-  left: 50%;
+.small {
+  width:100px;
+  height:100px;
+
 }
 
-.animateProfile-active {
-  left: 50%;
-  transition: left 200ms ease-in-out;
+
+/*Small image */
+
+.smallImageContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.animateProfile-enter-done {
-  left: 90%;
-  transition: left 200ms ease-in-out;
-}
-
-.animateProfile-exit {
-  left: 90%;
-}
-.animateProfile-exit-active {
-  left: 50%;
-
-  transition: left 200ms ease-in-out;
-}
-
-.animateProfile-exit-done {
-  left: 50%;
-}
-
-.animateImage-enter {
-  transform: scale(1);
-}
-
-.animateImage-active {
-  transform: scale(0.6);
-  transition: transform 200ms ease-in-out;
-}
-
-.animateImage-enter-done {
-  transform: scale(0.6);
-  transition: transform 200ms ease-in-out;
-}
-
-.animateImage-exit {
-  transform: scale(0.6);
-}
-.animateImage-exit-active {
-  transform: scale(1);
-  transition: transform 200ms ease-in-out;
-}
-
-.animateImage-exit-done {
-  transform: scale(1);
-}
-
-.animateTop-enter {
-  top: -70px;
-}
-
-.animateTop-active {
-  top: -140px;
-  transition: top 200ms ease-in-out;
-}
-
-.animateTop-enter-done {
-  top: -140px;
-  transition: top 200ms ease-in-out;
-}
 
 /* NAME */
 /********/
@@ -176,7 +125,31 @@
   display: block;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.7);
+
 }
+
+
+/* CONTENT */
+
+.content{
+  height: 1000px;
+  background: rgb(238, 238, 238);
+
+}
+
+
+/* SKILLS IMAGES */
+
+.skillsContent {
+  position: relative; width: 50%; display:flex; flex-wrap:wrap;left:50px; margin-top:100px
+}
+
+
+.skillImage{
+  width:70px;
+
+}
+
 
 
 
