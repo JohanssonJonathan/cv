@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../NixieOne.ttf') format('truetype');
+}
+
 /*
 main styles
 */
@@ -9,12 +14,14 @@ body{
   margin:0;
   padding:0;
   box-sizing: border-box;
-  background: url("/josh-withers-635130-unsplash.jpg");
+  background: url("../images/josh-withers-635130-unsplash.jpg");
   background-repeat: no-repeat;
   width:100%;
   height: 100vh;
   background-size: 100%;
   background-position: 50%;
+  font-family: "Montserrat"
+
 }
 
 
