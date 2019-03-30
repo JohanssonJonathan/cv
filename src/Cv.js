@@ -118,20 +118,14 @@ const localStyles = {
     width: "100%",
     height: 450,
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "center",
     borderBottom:"10px solid rgba(0,0,0,.7)"
   },
   letter: { textAlign: "center", width: "50%" }
 };
 
-const ProgressBar = ({ style, id }) => {
-  return (
-    <div className="meter">
-      <span id={id} style={style} />
-    </div>
-  );
-};
+
 
 const Name = () => {
   return (
@@ -145,7 +139,7 @@ const Letter = () => {
   return (
     <Fade>
       <div style={localStyles.letterContainer}>
-        <div style={{ width: "100%" }}>
+        <div>
           <span className="font">Hello!</span>
           <p style={{ marginTop: 50 }}>
             My name is Jonathan Johansson, and I am a frondend-developer based
@@ -153,9 +147,7 @@ const Letter = () => {
           </p>
           <p>Please scroll down to follow my journey as a developer</p>
         </div>
-        <div>
           <img src={kid} className="kid" />
-        </div>
       </div>
     </Fade>
   );
@@ -216,7 +208,7 @@ const SmallImage = ({ showSmallImage }) => {
 
 const SectionWrapper = ({ children }) => {
   return (
-    <div style={{ width: "100%", display: "flex", height: 400, marginBottom:100, marginTop:60, position:"relative" }}>
+    <div style={{ width: "100%", display: "flex", height: 400, marginBottom:100, position:"relative", backgroundColor:"rgba(0,0,0,0.8)" }}>
       {children}
     </div>
   );
@@ -226,9 +218,7 @@ const SkillImageContainer = ({ showSkills }) => {
   return (
     <Fragment>
 
-      <div style={{position:"absolute", height:100, width:"100%", top:100}} className="hej">
-
-      </div>
+  
       <div className="skillsContent">
         <SkillIcon
           src={html}
@@ -303,7 +293,8 @@ const SkillImageContainer = ({ showSkills }) => {
             display: "flex",
             flexDirection: "column",
             alignSelf: "center",
-            margin: 0
+            margin: 0,
+            color:"rgba(255,255,255,0.8)"
           }}
         >
           <span className="skillHead">Technologies</span>
