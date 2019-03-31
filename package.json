@@ -1,9 +1,10 @@
 {
   "name": "cv",
   "version": "0.1.0",
+  "homepage": "https://johanssonjonathan.github.io/cv",
   "private": true,
   "dependencies": {
-    "gh-pages": "^2.0.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-reveal": "^1.2.2",

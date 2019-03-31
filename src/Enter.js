@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import "./css/App.css";
 import "./css/enterBtn.css";
 import Transition from "./UI/Transition"
-import { CSSTransition } from "react-transition-group";
 
 
 class Wrapper extends Component {
@@ -33,8 +32,7 @@ const ImageButton = ({ showCv, onEntered, leaveFirstScreen }) => {
      {...transitionProps}
     >
       <div className="cartbtn" onClick={leaveFirstScreen}>
-        <img src="./surf.svg" />
-        <span>View cart</span>
+        <span>Jonathan Johansson</span>
       </div>
     </Transition>
   );

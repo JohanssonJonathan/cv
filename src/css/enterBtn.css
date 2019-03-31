@@ -80,18 +80,18 @@
 
 .startBtn{
   position: relative;
-  top:230px;
+  top:300px;
 }
 
 .cartbtn {
   text-align: center;
   position:relative;
   display:block;
-  font-size: 1.3em;
+  font-size: 1.7em;
   padding:10px;
   opacity: 0;
   top:-100px;
-  width:150px;
+  width:300px;
   margin: auto;
   color:rgba(0,0,0,0.7);
   font-family: 'Montserrat', sans-serif;

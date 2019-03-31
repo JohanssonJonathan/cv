@@ -1,41 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 @font-face {
-  font-family: 'MyWebFont';
-  src: url('../NixieOne.ttf') format('truetype');
+  font-family: "MyWebFont";
+  src: url("../NixieOne.ttf") format("truetype");
 }
 
-.font{
+.font {
   font-family: "Montserrat";
   font-weight: 1000;
-  font-size:120px;
+  font-size: 120px;
   padding-bottom: 100px;
-  color:rgba(0,0,0,0.8);
-
-} 
-
-
-.follow{
-  font-family: "Montserrat";
-  font-weight: 1000;
-  font-size:20px;
-  color:rgba(0,0,0,0.8)
-} 
- 
-.kid{
-  width:200px;
-  border-radius:50%;
-  margin-left:200px;
-  box-shadow:0 0 20px rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.shadow{
-  /* box-shadow:inset 0px 2px 10px black; */
-  /* border-bottom:20px solid rgba(0,0,0,0.7) */
 
-  /* box-shadow: 0px 5px 0px rgba(0,0,0,.6), 0px 10px 10px rgba(0,0,0,.2); */
-  
+
+.profile {
+  width: 200px;
+  border-radius: 50%;
+  margin-left: 200px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
+
 
 .wrapper {
   opacity: 1;
@@ -45,19 +31,16 @@
   background: rgb(238, 238, 238);
   position: absolute;
   bottom: 0px;
-
 }
 
 /* Profile Image */
 /*****************/
 
-
 .small {
-  width:100px;
-  height:100px;
-  border-radius:50%
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
-
 
 /*Small image */
 
@@ -65,23 +48,14 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index:200;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 /* NAME */
 /********/
-
-.name {
-  position: absolute;
-  left: 20px;
-  top: -40px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-}
 
 .underline {
   height: 10px;
@@ -91,121 +65,72 @@
   top: -10px;
 }
 
-/* PROGRESS BAR */
 
-.meter {
-  height: 5px;
-  position: relative;
-  margin-bottom: 7px;
-}
-
-.meter > span {
-  display: block;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-}
-
-.meter > span#progressbar1 {
-  background-color: rgba(14, 63, 27, 0.863);
-}
-
-.meter > span#progressbar2 {
-  background-color: #53341fdc;
-}
-
-.meter > span#progressbar3 {
-  background-color: rgba(92, 56, 58, 0.863);
-}
-
-.meter > span#progressbar4 {
-  background-color: #4b3843d5;
-}
-
-.meter > span#progressbar5 {
-  background-color: #3a5052da;
-}
-.meter > span#progressbar6 {
-  background-color: #696852d8;
-}
-.meter > span#progressbar7 {
-  background-color: #664343d7;
-}
-.meter > span#progressbar8 {
-  background-color: #6e6c2ad8;
-}
 
 /* SKILLS */
 
-.skill {
-  position: absolute;
-  display: block;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
 
-}
 
-.skillHead{
+.skillHead {
   font-family: "Montserrat";
   font-weight: 1000;
-  font-size:40px;
-  color:rgba(255,255,255,0.8);
-
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.test{
-  margin-top:20px,
-}
-
-.presstext{
-  margin-top: 0;
-  font-size:12px
-}
 
 /* CONTENT */
 
-.content{
-  height: 1550px;
+.content {
+  height: 1400px;
   background: rgb(241, 241, 241);
-
+  position: relative;
 }
-
 
 /* SKILLS IMAGES */
 
 .skillsContent {
-  position: relative; width: 50%; display:flex; flex-wrap:wrap;left:100px;
+  position: relative;
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
-.skillImage{
-  width:50px;
-
+.iconContainer {
+  transition-property: transform, filter;
+  transition-duration: 0.2s, 0.6s;
 }
 
-.projecttext{
-    display: block;
-    margin-bottom: 20px;
-    font-family: "Montserrat";
-    font-weight: 1000;
-    text-align: center;
-    font-size:40px;
-    color:rgba(0,0,0,0.8);
-  
+.skillImage {
+  width: 80px;
 }
 
-.projects {
-  color:rgba(255,255,255,0.5);  
-  padding:5px;
-  font-size:14px;
+/*Projects */
+
+.projectHeader {
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Montserrat";
+  font-weight: 1000;
+  text-align: center;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.hej{
-  background-position: 0px 100px;
-  background-image: url("../images/josh-withers-635130-unsplash.jpg");
-  opacity: 0.2;
+.project {
+  border-radius: 5px;
+  display: "flex";
+  justify-content: flex-start;
+  align-items: flex-start;
 }
+
+.projectTextInfo {
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+}
+
 /* CV Transition*/
 /************/
 
