@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import "./css/App.css";
 import "./css/cv.css";
 import Fade from "react-reveal/Fade";
@@ -38,16 +38,27 @@ const localStyles = {
   }
 };
 
-const Project = ({ name, children, technologies, src }) => {
+class Project extends Component{
+
+  state={
+    hover:false
+  }
+
+  render(){
+    const { name, children, technologies, src }= this.props
     const openLinkInNewTab = url => {
         const win = window.open(url, "_blank");
         win.focus();
       };
+      const {hover}= this.state;
   return (
     <div style={{ width: 200, cursor:"pointer" }} className="project">
       <h4
-        style={localStyles.projectName}
+        style={{backgroundColor:hover&&"rgba(0,0,0,0.6)"}}
+        className="projectName"
         onClick={()=>openLinkInNewTab(src)}
+        onMouseEnter={() => this.setState({hover: true})}
+        onMouseLeave={() => this.setState({ hover: false })}
       >
         {name}
       </h4>
@@ -59,16 +70,17 @@ const Project = ({ name, children, technologies, src }) => {
       </ul>
     </div>
   );
+
+  }
 };
 
 const ProjectsInfo = () => {
   return (
     <React.Fragment>
       <span className="projectHeader">Projects</span>
-      <p>Check out the projects I've made.</p>
       <p>
         You can also check out my {" "}
-        <a style={localStyles.link} href="https://github.com/JohanssonJonathan">github</a> for more
+        <a style={localStyles.link} id="github" href="https://github.com/JohanssonJonathan">github</a> for more
         projects
       </p>
     </React.Fragment>

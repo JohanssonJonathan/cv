@@ -149,7 +149,7 @@ const TechnologiesText = ({ showSkills }) => {
       <div style={localStyles.technologiesTextContainer}>
         <span className="skillHead">Technologies</span>
         <p style={{ marginTop: 20 }}>
-          These are the technologies that I know at the moment.
+          These are the technologies that I know.
         </p>
         <p
           style={{

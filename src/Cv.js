@@ -25,12 +25,11 @@ const Info = () => {
     <Fade>
       <div style={localStyles.letterContainer}>
         <div>
-          <span className="font">Hello!</span>
-          <p style={{ marginTop: 50 }}>
-            My name is Jonathan Johansson, and I am a frontend-developer based
-            in Gothenburg Sweden
+          <p style={{ marginTop: 50, fontSize:20 }}>
+            My name is Jonathan Johansson
+            I am a frontend-developer based
+            in Gothenburg, Sweden
           </p>
-          <p>Please scroll down to follow my journey as a developer</p>
         </div>
         <img src={kid} className="profile" />
       </div>

@@ -131,6 +131,17 @@
   text-align: left;
 }
 
+.projectName{
+  transition: all 0.4s;
+  background-color: rgba(0,0,0,0.8);
+  color: rgba(255,255,255,0.8);
+  margin:0;
+  padding:5px;
+  border-radius:5px 5px 0 0;
+}
+
+
+
 /* CV Transition*/
 /************/
 
