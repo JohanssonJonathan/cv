@@ -121,7 +121,7 @@ const Projects = () => {
         Search for specific news through an API
       </Project>
       <Project 
-      src={"#"}
+      src={"https://www.getpace.app/"}
         name="Pace"
         technologies={[
           "HTML5",
@@ -129,10 +129,10 @@ const Projects = () => {
           "ES6",
           "Graphql",
           "Prisma",
-          "React-native"
+          "React-native-web"
         ]}
       >
-        A project I made at Hyperlab during my intership
+        A project I made at Hyperlab during my internship. 
       </Project>
     </div>
   );

@@ -4,12 +4,13 @@
   "homepage": "https://johanssonjonathan.github.io/cv",
   "private": true,
   "dependencies": {
+    "csso-webpack-plugin": "^1.0.0-beta.12",
     "gh-pages": "^2.0.1",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-reveal": "^1.2.2",
-    "react-scripts": "1.1.5",
-    "react-transition-group": "^2.6.1"
+    "react-scripts": "2.1.8",
+    "react-transition-group": "^2.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,6 +23,12 @@
   "devDependencies": {
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "react-test-renderer": "^16.5.2"
-  }
+    "react-test-renderer": "^16.8.6"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
